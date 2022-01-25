@@ -1,0 +1,63 @@
+
+
+    function iniciarpartida(){
+      function onRequest(request, response) {
+        console.log("Petició Rebuda.");
+        response.writeHead(200, {"Content-Type": "text/plain; charset=utf-8"});
+        http.createServer(onRequest).listen(8888);
+
+        console.log("Servidor iniciat.");
+        
+        response.end();
+        var tableArr = [
+          ["row 1, cell 1", "row 1, cell 2"],
+          ["row 2, cell 1", "row 2, cell 2"],
+          ["row 2, cell 1", "row 2, cell 2"]
+        ]
+  
+        let table = document.createElement('table');
+        for (let row of tableArr) {
+          table.insertRow();
+          for (let cell of row) {
+            let newCell = table.rows[table.rows.length - 1].insertCell();
+            newCell.textContent = cell;
+          }
+        }
+        document.body.appendChild(table);
+        table = "el pepe"
+                return table;
+                }
+       exports.iniciarpartida = iniciarpartida;         
+      }
+    
+
+            
+    function duradapartida(){
+        return datafinal-datainici;
+    }
+
+    function crearfichanegre(){
+      var fn = document.createElement("img");
+      fn.src = "fichanegre.png";
+      fn.setAttribute("style","position:relative");
+      fn.setAttribute("width","50");
+      fn.setAttribute("height","50");
+      fn.style.left = 3+ml*3;
+      fn.style.top = 2+mt*4;
+      var div = document.getElementById("x");
+      div.appendChild(fn);
+
+      div.setAttribute("style","position:absolute");
+    }
+    function crearfichablanca(){
+      var fb = document.createElement("img");
+      fb.src = "fichablanca.png";
+      fb.setAttribute("style","position:relative");
+      fb.setAttribute("width","50");
+      fb.setAttribute("height","50");
+      fb.style.left = -47+ml*4;
+      fb.style.top = 2+mt*4;
+      var div = document.getElementById("x");
+      div.appendChild(fb);
+      div.setAttribute("style","position:absolute");
+    }

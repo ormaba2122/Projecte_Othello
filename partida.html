@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table id="taula" bgcolor="#000000">
+        <tr> <td id=1 width="50" height="50px" bgcolor="#green"></td><td id=2 width="50" height="50px" bgcolor="#green"></td><td id=3 width="50" height="50px" bgcolor="#green"></td><td id=4 width="50" height="50px" bgcolor="#green"></td><td id=5 width="50" height="50px" bgcolor="#green"></td><td id=6 width="50" height="50px" bgcolor="#green"></td><td id=7 width="50" height="50px" bgcolor="#green"></td><td id=8 width="50" height="50px" bgcolor="#green"></td>
+        </tr>
+        <tr> <td id=9 width="50" height="50px" bgcolor="#green"></td><td id=10 width="50" height="50px" bgcolor="#green"></td><td id=11 width="50" height="50px" bgcolor="#green"></td><td id=12 width="50" height="50px" bgcolor="#green"></td><td id=13 width="50" height="50px" bgcolor="#green"></td><td id=14 width="50" height="50px" bgcolor="#green"></td><td id=15 width="50" height="50px" bgcolor="#green"></td><td id=16 width="50" height="50px" bgcolor="#green"></td>
+        </tr>
+        <tr> <td id=17 width="50" height="50px" bgcolor="#green"></td><td id=18 width="50" height="50px" bgcolor="#green"></td><td id=19 width="50" height="50px" bgcolor="#green"></td><td id=20 width="50" height="50px" bgcolor="#green"></td><td id=21 width="50" height="50px" bgcolor="#green"></td><td id=22 width="50" height="50px" bgcolor="#green"></td><td id=23 width="50" height="50px" bgcolor="#green"></td><td id=24 width="50" height="50px" bgcolor="#green"></td>
+        </tr>
+        <tr> <td id=25 width="50" height="50px" bgcolor="#green"></td><td id=26 width="50" height="50px" bgcolor="#green"></td><td id=27 width="50" height="50px" bgcolor="#green"></td><td id=28 width="50" height="50px" bgcolor="#green"></td><td id=29 width="50" height="50px" bgcolor="#green"></td><td id=30 width="50" height="50px" bgcolor="#green"></td><td id=31 width="50" height="50px" bgcolor="#green"></td><td id=32 width="50" height="50px" bgcolor="#green"></td>
+        </tr>
+        <tr> <td id=33 width="50" height="50px" bgcolor="#green"></td><td id=34 width="50" height="50px" bgcolor="#green"></td><td id=35 width="50" height="50px" bgcolor="#green"></td><td id=36 width="50" height="50px" bgcolor="#green"></td><td id=37 width="50" height="50px" bgcolor="#green"></td><td id=38 width="50" height="50px" bgcolor="#green"></td><td id=39 width="50" height="50px" bgcolor="#green"></td><td id=40 width="50" height="50px" bgcolor="#green"></td>
+        </tr>
+        <tr> <td id=41 width="50" height="50px" bgcolor="#green"></td><td id=42 width="50" height="50px" bgcolor="#green"></td><td id=43 width="50" height="50px" bgcolor="#green"></td><td id=44 width="50" height="50px" bgcolor="#green"></td><td id=45 width="50" height="50px" bgcolor="#green"></td><td id=46 width="50" height="50px" bgcolor="#green"></td><td id=47 width="50" height="50px" bgcolor="#green"></td><td id=48 width="50" height="50px" bgcolor="#green"></td>
+        </tr>
+        <tr> <td id=49 width="50" height="50px" bgcolor="#green"></td><td id=50 width="50" height="50px" bgcolor="#green"></td><td id=51 width="50" height="50px" bgcolor="#green"></td><td id=52 width="50" height="50px" bgcolor="#green"></td><td id=53 width="50" height="50px" bgcolor="#green"></td><td id=54 width="50" height="50px" bgcolor="#green"></td><td id=55 width="50" height="50px" bgcolor="#green"></td><td id=56 width="50" height="50px" bgcolor="#green"></td>
+        </tr>
+        <tr> <td id=57 width="50" height="50px" bgcolor="#green"></td><td id=58 width="50" height="50px" bgcolor="#green"></td><td id=59 width="50" height="50px" bgcolor="#green"></td><td id=60 width="50" height="50px" bgcolor="#green"></td><td id=61 width="50" height="50px" bgcolor="#green"></td><td id=62 width="50" height="50px" bgcolor="#green"></td><td id=63 width="50" height="50px" bgcolor="#green"></td><td id=64 width="50" height="50px" bgcolor="#green"></td>
+        </tr>
+    </table>
+</body>
+<script>
+    
+        document.getElementById('taula').addEventListener('click', (ev)=>{
+            console.log(ev.target.id);
+        })
+        
+        crearfichanegre();
+    function crearfichanegre(){
+        document.getElementById('taula').addEventListener('click', (ev)=>{
+            if(ev.target.id !== "taula"){
+        var fn = document.createElement("img");
+      fn.src = "fichanegre.png";
+      fn.setAttribute("style","position:relative");
+      fn.setAttribute("width","50");
+      fn.setAttribute("height","46");
+      var div = document.getElementById(ev.target.id);
+      div.appendChild(fn);
+
+      div.setAttribute("style","position:relative");
+       } })
+    }
+</script>
+
+</html>
