@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formulario Ajax</title>
+</head>
+<body>
+<h1>Formulario Ajax</h1>
+<form id="myform">
+	<label for="name">Nombre</label>
+	<input type="text" name="name" id="name" placeholder="Nombre" required><br>
+	<label for="lastname">Apellidos</label>
+	<input type="text" name="lastname" id="lastname" placeholder="Apellidos" required><br>
+	<label for="phone">Telefono</label>
+	<input type="text" name="phone" id="phone" placeholder="Telefono" required><br>
+	<label for="address">Domicilio</label>
+	<input type="text" name="address" id="address" placeholder="Domicilio" required><br>
+	<input type="submit" value="Enviar" onclick="inici()">
+</form>
+<script>
+	var form = document.getElementById("myform");
+    var xhr;
+
+    function inici() {
+
+    let formData = new FormData(form);
+    
+    let xhr = new XMLHttpRequest();
+    xhr.open('POST', '/enviar', true);
+    xhr.responseType = 'text';
+
+    xhr.onload = function (e) {
+        if (this.status == 200) {
+            let resposta = this.response;
+            console.log(resposta);
+        }
+    };
+
+    xhr.send(formData);
+
+}
+</script>
+<p>Powered by <a href="https://evilnapsis.com/" target="_blank">Evilnapsis</a></p>
+</body>
+</html>

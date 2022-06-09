@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Document</title>
 </head>
 <body>
@@ -25,28 +26,136 @@
         <tr> <td id=57 width="50" height="50px" bgcolor="#green"></td><td id=58 width="50" height="50px" bgcolor="#green"></td><td id=59 width="50" height="50px" bgcolor="#green"></td><td id=60 width="50" height="50px" bgcolor="#green"></td><td id=61 width="50" height="50px" bgcolor="#green"></td><td id=62 width="50" height="50px" bgcolor="#green"></td><td id=63 width="50" height="50px" bgcolor="#green"></td><td id=64 width="50" height="50px" bgcolor="#green"></td>
         </tr>
     </table>
-</body>
-<script>
+    <script>            
     
-        document.getElementById('taula').addEventListener('click', (ev)=>{
-            console.log(ev.target.id);
-        })
+    function inici() {
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', 'negra', true);
+			xhr.responseType = 'blob';
+
+			xhr.onload = function (e) {
+				if (this.status == 200) {
+					var blob = this.response;
+					var ficha = document.createElement('img');
+					var URL = window.URL || window.webkitURL;
+					ficha.src = URL.createObjectURL(blob);
+                    ficha.setAttribute("width","50");ficha.setAttribute("height","46");
+                    document.getElementById(28).appendChild(ficha);;
+				};
+			};
+            xhr.send();
+            var xhr = new XMLHttpRequest();
+			xhr.open('GET', 'blanca', true);
+			xhr.responseType = 'blob';
+
+			xhr.onload = function (e) {
+				if (this.status == 200) {
+					var blob = this.response;
+					var ficha = document.createElement('img');
+					var URL = window.URL || window.webkitURL;
+					ficha.src = URL.createObjectURL(blob);
+                    ficha.setAttribute("width","50"); ficha.setAttribute("height","46");
+                    document.getElementById(29).appendChild(ficha); 
+				};
+			};
+
+			xhr.send();
+            var xhr = new XMLHttpRequest();
+			xhr.open('GET', 'negra', true);
+			xhr.responseType = 'blob';
+
+			xhr.onload = function (e) {
+				if (this.status == 200) {
+					var blob = this.response;
+					var ficha = document.createElement('img');
+					var URL = window.URL || window.webkitURL;
+					ficha.src = URL.createObjectURL(blob);
+                    ficha.setAttribute("width","50"); ficha.setAttribute("height","46");
+                    document.getElementById(37).appendChild(ficha); 
+				};
+			};
+
+			xhr.send();
+            var xhr = new XMLHttpRequest();
+			xhr.open('GET', 'blanca', true);
+			xhr.responseType = 'blob';
+
+			xhr.onload = function (e) {
+				if (this.status == 200) {
+					var blob = this.response;
+					var ficha = document.createElement('img');
+					var URL = window.URL || window.webkitURL;
+					ficha.src = URL.createObjectURL(blob);
+                    ficha.setAttribute("width","50"); ficha.setAttribute("height","46");
+                    document.getElementById(36).appendChild(ficha); 
+				};
+			};
+
+			xhr.send();
+		}
+		window.addEventListener("load", inici, true);
         
-        crearfichanegre();
-    function crearfichanegre(){
+    
+    
+    var j=1;
+		
+        crearficha();
+    function crearficha(){
         document.getElementById('taula').addEventListener('click', (ev)=>{
             if(ev.target.id !== "taula"){
-        var fn = document.createElement("img");
-      fn.src = "fichanegre.png";
-      fn.setAttribute("style","position:relative");
-      fn.setAttribute("width","50");
-      fn.setAttribute("height","46");
-      var div = document.getElementById(ev.target.id);
-      div.appendChild(fn);
+                var xhr = new XMLHttpRequest();
+                var div = document.getElementById(ev.target.id);
+                if(j==1){
+                    xhr.open('GET', 'negra', true);
+                    var f = 1;
+                    if (ev.target.id){j=2;}
+                }else if(j==2){
+                    var fb = xhr.open('GET', 'blanca', true);
+                    var f = 2;
+                    if (ev.target.id){j=1;}
+                }
+                xhr.responseType = 'blob';
+                div.setAttribute("id",ev.target.id);
+			xhr.onload = function (e) {
+				if (this.status == 200) {
+					var blob = this.response;
+					var ficha = document.createElement('img');
+					var URL = window.URL || window.webkitURL;
+                    if(f==1){ficha.setAttribute("id",div.id+"n")}
+                    if(f==2){ficha.setAttribute("id",div.id+"b")}
+					ficha.src = URL.createObjectURL(blob);
+                    
+                    ficha.setAttribute("style","position:relative");
+                    ficha.setAttribute("width","50");
+                    ficha.setAttribute("height","46");
+                    console.log(ficha.id);
+					div.appendChild(ficha);
+                    console.log(div.id);
+                    for(var i=0;i<8;i++){
+                    var divb = document.getElementById(div.id-i);
+                    divb.firstChild.src = ficha.src;
+                    }
+                    
+                    
+				};
 
-      div.setAttribute("style","position:relative");
-       } })
-    }
-</script>
+			};
+            xhr.send();
+
+                
+            
+        //     var divc = document.getElementById(div.id-2);
+        //     console.log(divb.id);
+        //    else if(divb.firstChild.id == divb.id+"n"){
+        //        divb.firstChild.src = "fichablanca.png"
+        //    }
+    div.setAttribute("style","position:relative");
+    
+    } })
+    
+    
+}
+        </script>
+</body>
 
 </html>
