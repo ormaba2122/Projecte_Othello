@@ -1,161 +1,502 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>Document</title>
+
+    <style>
+        body {
+            background-color: #ccc;
+        }
+
+        #taula {
+            position: relative;
+            left: 400px;
+            top: 50px;
+        }
+
+        .marcador {
+            border-collapse: collapse;
+            width: 300px;
+            height: 200px;
+            position: relative;
+            left: 1000px;
+            top: -550px;
+            border: 3px solid #73AD21;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        th,
+        td {
+            text-align: center;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2
+        }
+
+        th {
+
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        button {
+            position: relative;
+            left: 50px;
+            top: -500px;
+            background-color: #04AA6D;
+            width: 200px;
+            height: 40px;
+            color: white;
+            border: 2px solid rgb(60, 249, 22);
+            font-size: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        #turno{
+            position: relative;
+            left: 960px;
+            top: -540px;
+            width: 200px;
+            height: 40px;
+            text-align: center;
+            color: black;
+            font-size: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        button:hover {
+            background-color: rgb(60, 249, 22);
+            color: white;
+        }
+    </style>
 </head>
+
 <body>
+    <h1 id="resultat"></h1>
     <table id="taula" bgcolor="#000000">
-        <tr> <td id=1 width="50" height="50px" bgcolor="#green"></td><td id=2 width="50" height="50px" bgcolor="#green"></td><td id=3 width="50" height="50px" bgcolor="#green"></td><td id=4 width="50" height="50px" bgcolor="#green"></td><td id=5 width="50" height="50px" bgcolor="#green"></td><td id=6 width="50" height="50px" bgcolor="#green"></td><td id=7 width="50" height="50px" bgcolor="#green"></td><td id=8 width="50" height="50px" bgcolor="#green"></td>
+        <tr>
+            <td id=1 width="50" height="50px" bgcolor="#green"></td>
+            <td id=2 width="50" height="50px" bgcolor="#green"></td>
+            <td id=3 width="50" height="50px" bgcolor="#green"></td>
+            <td id=4 width="50" height="50px" bgcolor="#green"></td>
+            <td id=5 width="50" height="50px" bgcolor="#green"></td>
+            <td id=6 width="50" height="50px" bgcolor="#green"></td>
+            <td id=7 width="50" height="50px" bgcolor="#green"></td>
+            <td id=8 width="50" height="50px" bgcolor="#green"></td>
         </tr>
-        <tr> <td id=9 width="50" height="50px" bgcolor="#green"></td><td id=10 width="50" height="50px" bgcolor="#green"></td><td id=11 width="50" height="50px" bgcolor="#green"></td><td id=12 width="50" height="50px" bgcolor="#green"></td><td id=13 width="50" height="50px" bgcolor="#green"></td><td id=14 width="50" height="50px" bgcolor="#green"></td><td id=15 width="50" height="50px" bgcolor="#green"></td><td id=16 width="50" height="50px" bgcolor="#green"></td>
+        <tr>
+            <td id=9 width="50" height="50px" bgcolor="#green"></td>
+            <td id=10 width="50" height="50px" bgcolor="#green"></td>
+            <td id=11 width="50" height="50px" bgcolor="#green"></td>
+            <td id=12 width="50" height="50px" bgcolor="#green"></td>
+            <td id=13 width="50" height="50px" bgcolor="#green"></td>
+            <td id=14 width="50" height="50px" bgcolor="#green"></td>
+            <td id=15 width="50" height="50px" bgcolor="#green"></td>
+            <td id=16 width="50" height="50px" bgcolor="#green"></td>
         </tr>
-        <tr> <td id=17 width="50" height="50px" bgcolor="#green"></td><td id=18 width="50" height="50px" bgcolor="#green"></td><td id=19 width="50" height="50px" bgcolor="#green"></td><td id=20 width="50" height="50px" bgcolor="#green"></td><td id=21 width="50" height="50px" bgcolor="#green"></td><td id=22 width="50" height="50px" bgcolor="#green"></td><td id=23 width="50" height="50px" bgcolor="#green"></td><td id=24 width="50" height="50px" bgcolor="#green"></td>
+        <tr>
+            <td id=17 width="50" height="50px" bgcolor="#green"></td>
+            <td id=18 width="50" height="50px" bgcolor="#green"></td>
+            <td id=19 width="50" height="50px" bgcolor="#green"></td>
+            <td id=20 width="50" height="50px" bgcolor="#green"></td>
+            <td id=21 width="50" height="50px" bgcolor="#green"></td>
+            <td id=22 width="50" height="50px" bgcolor="#green"></td>
+            <td id=23 width="50" height="50px" bgcolor="#green"></td>
+            <td id=24 width="50" height="50px" bgcolor="#green"></td>
         </tr>
-        <tr> <td id=25 width="50" height="50px" bgcolor="#green"></td><td id=26 width="50" height="50px" bgcolor="#green"></td><td id=27 width="50" height="50px" bgcolor="#green"></td><td id=28 width="50" height="50px" bgcolor="#green"></td><td id=29 width="50" height="50px" bgcolor="#green"></td><td id=30 width="50" height="50px" bgcolor="#green"></td><td id=31 width="50" height="50px" bgcolor="#green"></td><td id=32 width="50" height="50px" bgcolor="#green"></td>
+        <tr>
+            <td id=25 width="50" height="50px" bgcolor="#green"></td>
+            <td id=26 width="50" height="50px" bgcolor="#green"></td>
+            <td id=27 width="50" height="50px" bgcolor="#green"></td>
+            <td id=28 width="50" height="50px" bgcolor="#green"></td>
+            <td id=29 width="50" height="50px" bgcolor="#green"></td>
+            <td id=30 width="50" height="50px" bgcolor="#green"></td>
+            <td id=31 width="50" height="50px" bgcolor="#green"></td>
+            <td id=32 width="50" height="50px" bgcolor="#green"></td>
         </tr>
-        <tr> <td id=33 width="50" height="50px" bgcolor="#green"></td><td id=34 width="50" height="50px" bgcolor="#green"></td><td id=35 width="50" height="50px" bgcolor="#green"></td><td id=36 width="50" height="50px" bgcolor="#green"></td><td id=37 width="50" height="50px" bgcolor="#green"></td><td id=38 width="50" height="50px" bgcolor="#green"></td><td id=39 width="50" height="50px" bgcolor="#green"></td><td id=40 width="50" height="50px" bgcolor="#green"></td>
+        <tr>
+            <td id=33 width="50" height="50px" bgcolor="#green"></td>
+            <td id=34 width="50" height="50px" bgcolor="#green"></td>
+            <td id=35 width="50" height="50px" bgcolor="#green"></td>
+            <td id=36 width="50" height="50px" bgcolor="#green"></td>
+            <td id=37 width="50" height="50px" bgcolor="#green"></td>
+            <td id=38 width="50" height="50px" bgcolor="#green"></td>
+            <td id=39 width="50" height="50px" bgcolor="#green"></td>
+            <td id=40 width="50" height="50px" bgcolor="#green"></td>
         </tr>
-        <tr> <td id=41 width="50" height="50px" bgcolor="#green"></td><td id=42 width="50" height="50px" bgcolor="#green"></td><td id=43 width="50" height="50px" bgcolor="#green"></td><td id=44 width="50" height="50px" bgcolor="#green"></td><td id=45 width="50" height="50px" bgcolor="#green"></td><td id=46 width="50" height="50px" bgcolor="#green"></td><td id=47 width="50" height="50px" bgcolor="#green"></td><td id=48 width="50" height="50px" bgcolor="#green"></td>
+        <tr>
+            <td id=41 width="50" height="50px" bgcolor="#green"></td>
+            <td id=42 width="50" height="50px" bgcolor="#green"></td>
+            <td id=43 width="50" height="50px" bgcolor="#green"></td>
+            <td id=44 width="50" height="50px" bgcolor="#green"></td>
+            <td id=45 width="50" height="50px" bgcolor="#green"></td>
+            <td id=46 width="50" height="50px" bgcolor="#green"></td>
+            <td id=47 width="50" height="50px" bgcolor="#green"></td>
+            <td id=48 width="50" height="50px" bgcolor="#green"></td>
         </tr>
-        <tr> <td id=49 width="50" height="50px" bgcolor="#green"></td><td id=50 width="50" height="50px" bgcolor="#green"></td><td id=51 width="50" height="50px" bgcolor="#green"></td><td id=52 width="50" height="50px" bgcolor="#green"></td><td id=53 width="50" height="50px" bgcolor="#green"></td><td id=54 width="50" height="50px" bgcolor="#green"></td><td id=55 width="50" height="50px" bgcolor="#green"></td><td id=56 width="50" height="50px" bgcolor="#green"></td>
+        <tr>
+            <td id=49 width="50" height="50px" bgcolor="#green"></td>
+            <td id=50 width="50" height="50px" bgcolor="#green"></td>
+            <td id=51 width="50" height="50px" bgcolor="#green"></td>
+            <td id=52 width="50" height="50px" bgcolor="#green"></td>
+            <td id=53 width="50" height="50px" bgcolor="#green"></td>
+            <td id=54 width="50" height="50px" bgcolor="#green"></td>
+            <td id=55 width="50" height="50px" bgcolor="#green"></td>
+            <td id=56 width="50" height="50px" bgcolor="#green"></td>
         </tr>
-        <tr> <td id=57 width="50" height="50px" bgcolor="#green"></td><td id=58 width="50" height="50px" bgcolor="#green"></td><td id=59 width="50" height="50px" bgcolor="#green"></td><td id=60 width="50" height="50px" bgcolor="#green"></td><td id=61 width="50" height="50px" bgcolor="#green"></td><td id=62 width="50" height="50px" bgcolor="#green"></td><td id=63 width="50" height="50px" bgcolor="#green"></td><td id=64 width="50" height="50px" bgcolor="#green"></td>
+        <tr>
+            <td id=57 width="50" height="50px" bgcolor="#green"></td>
+            <td id=58 width="50" height="50px" bgcolor="#green"></td>
+            <td id=59 width="50" height="50px" bgcolor="#green"></td>
+            <td id=60 width="50" height="50px" bgcolor="#green"></td>
+            <td id=61 width="50" height="50px" bgcolor="#green"></td>
+            <td id=62 width="50" height="50px" bgcolor="#green"></td>
+            <td id=63 width="50" height="50px" bgcolor="#green"></td>
+            <td id=64 width="50" height="50px" bgcolor="#green"></td>
         </tr>
     </table>
-    <script>            
+    </br>
+    <button onclick="location.href = '/login';" id="myButton" class="float-left submit-button">Crear partida</button></br></br>
+
+    <table class="marcador">
+        <tr>
+            <th>Nom</th>
+            <th>Fitxes</th>
+            <th>Punts</th>
+        </tr>
+        <tr>
+            <td id="jugador1"></td>
+            <td>Negres</td>
+            <td id="fn">2</td>
+        </tr>
+        <tr>
+            <td id="jugador2"></td>
+            <td>Blanques</td>
+            <td id="fb">2</td>
+        </tr>
+    </table>
+    <div id="turno">Tiran negres</div>
     
-    function inici() {
-			var xhr = new XMLHttpRequest();
-			xhr.open('GET', 'negra', true);
-			xhr.responseType = 'blob';
+    <script>
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const nom1 = urlParams.get('nom1')
+        const nom2 = urlParams.get('nom2')
+        if (nom1&&nom2) {
+            var j = 1;
+        } 
+        var f = 1;
 
-			xhr.onload = function (e) {
-				if (this.status == 200) {
-					var blob = this.response;
-					var ficha = document.createElement('img');
-					var URL = window.URL || window.webkitURL;
-					ficha.src = URL.createObjectURL(blob);
-                    ficha.setAttribute("width","50");ficha.setAttribute("height","46");
-                    document.getElementById(28).appendChild(ficha);;
-				};
-			};
-            xhr.send();
-            var xhr = new XMLHttpRequest();
-			xhr.open('GET', 'blanca', true);
-			xhr.responseType = 'blob';
+        var tauler = [
+            0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 1, 2, 0, 0, 0,
+            0, 0, 0, 2, 1, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0
+        ];
+        var taulerJSON = JSON.stringify(tauler);
 
-			xhr.onload = function (e) {
-				if (this.status == 200) {
-					var blob = this.response;
-					var ficha = document.createElement('img');
-					var URL = window.URL || window.webkitURL;
-					ficha.src = URL.createObjectURL(blob);
-                    ficha.setAttribute("width","50"); ficha.setAttribute("height","46");
-                    document.getElementById(29).appendChild(ficha); 
-				};
-			};
-
-			xhr.send();
-            var xhr = new XMLHttpRequest();
-			xhr.open('GET', 'negra', true);
-			xhr.responseType = 'blob';
-
-			xhr.onload = function (e) {
-				if (this.status == 200) {
-					var blob = this.response;
-					var ficha = document.createElement('img');
-					var URL = window.URL || window.webkitURL;
-					ficha.src = URL.createObjectURL(blob);
-                    ficha.setAttribute("width","50"); ficha.setAttribute("height","46");
-                    document.getElementById(37).appendChild(ficha); 
-				};
-			};
-
-			xhr.send();
-            var xhr = new XMLHttpRequest();
-			xhr.open('GET', 'blanca', true);
-			xhr.responseType = 'blob';
-
-			xhr.onload = function (e) {
-				if (this.status == 200) {
-					var blob = this.response;
-					var ficha = document.createElement('img');
-					var URL = window.URL || window.webkitURL;
-					ficha.src = URL.createObjectURL(blob);
-                    ficha.setAttribute("width","50"); ficha.setAttribute("height","46");
-                    document.getElementById(36).appendChild(ficha); 
-				};
-			};
-
-			xhr.send();
-		}
-		window.addEventListener("load", inici, true);
-        
-    
-    
-    var j=1;
-		
-        crearficha();
-    function crearficha(){
-        document.getElementById('taula').addEventListener('click', (ev)=>{
-            if(ev.target.id !== "taula"){
+        class partida {
+            static inici() {
+                document.getElementById('jugador1').innerHTML = nom1;
+                document.getElementById('jugador2').innerHTML = nom2;
                 var xhr = new XMLHttpRequest();
-                var div = document.getElementById(ev.target.id);
-                if(j==1){
-                    xhr.open('GET', 'negra', true);
-                    var f = 1;
-                    if (ev.target.id){j=2;}
-                }else if(j==2){
-                    var fb = xhr.open('GET', 'blanca', true);
-                    var f = 2;
-                    if (ev.target.id){j=1;}
-                }
+                xhr.open('GET', 'negra', true);
                 xhr.responseType = 'blob';
-                div.setAttribute("id",ev.target.id);
-			xhr.onload = function (e) {
-				if (this.status == 200) {
-					var blob = this.response;
-					var ficha = document.createElement('img');
-					var URL = window.URL || window.webkitURL;
-                    if(f==1){ficha.setAttribute("id",div.id+"n")}
-                    if(f==2){ficha.setAttribute("id",div.id+"b")}
-					ficha.src = URL.createObjectURL(blob);
-                    
-                    ficha.setAttribute("style","position:relative");
-                    ficha.setAttribute("width","50");
-                    ficha.setAttribute("height","46");
-                    console.log(ficha.id);
-					div.appendChild(ficha);
-                    console.log(div.id);
-                    for(var i=0;i<8;i++){
-                    var divb = document.getElementById(div.id-i);
-                    divb.firstChild.src = ficha.src;
+
+                xhr.onload = function (e) {
+                    if (this.status == 200) {
+                        var blob = this.response;
+                        var ficha = document.createElement('img');
+                        var URL = window.URL || window.webkitURL;
+                        ficha.src = URL.createObjectURL(blob);
+                        ficha.setAttribute("width", "50"); ficha.setAttribute("height", "46");
+                        document.getElementById(28).appendChild(ficha);
+                    };
+                };
+                xhr.send();
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', 'blanca', true);
+                xhr.responseType = 'blob';
+
+                xhr.onload = function (e) {
+                    if (this.status == 200) {
+                        var blob = this.response;
+                        var ficha = document.createElement('img');
+                        var URL = window.URL || window.webkitURL;
+                        ficha.src = URL.createObjectURL(blob);
+                        ficha.setAttribute("width", "50"); ficha.setAttribute("height", "46");
+                        document.getElementById(29).appendChild(ficha);
+                    };
+                };
+
+                xhr.send();
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', 'negra', true);
+                xhr.responseType = 'blob';
+
+                xhr.onload = function (e) {
+                    if (this.status == 200) {
+                        var blob = this.response;
+                        var ficha = document.createElement('img');
+                        var URL = window.URL || window.webkitURL;
+                        ficha.src = URL.createObjectURL(blob);
+                        ficha.setAttribute("width", "50"); ficha.setAttribute("height", "46");
+                        document.getElementById(37).appendChild(ficha);
+                    };
+                };
+
+                xhr.send();
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', 'blanca', true);
+                xhr.responseType = 'blob';
+
+                xhr.onload = function (e) {
+                    if (this.status == 200) {
+                        var blob = this.response;
+                        var ficha = document.createElement('img');
+                        var URL = window.URL || window.webkitURL;
+                        ficha.src = URL.createObjectURL(blob);
+                        ficha.setAttribute("width", "50"); ficha.setAttribute("height", "46");
+                        document.getElementById(36).appendChild(ficha);
+                    };
+                };
+
+                xhr.send();
+            }
+            static marcador() {
+                var contadorN = 0;
+                var contadorB = 0;
+                for (let c = 0; c < 64; c++) {
+                    if (tauler[c] == 1) {
+                        contadorN++;
+
+                    } else if (tauler[c] == 2) {
+                        contadorB++
                     }
                     
+                }
+                if(contadorN==0||contadorB==0||parseInt(contadorB)+parseInt(contadorN)==64){
+                    window.alert('Partida acabada');
+                }
+                document.getElementById('fn').innerHTML = contadorN;
+                document.getElementById('fb').innerHTML = contadorB;
+                console.log(contadorN);
+                console.log(contadorB);
+            }
+            static enviarDades() {
+                var url = 'http://localhost:8888/dades';
+
+                fetch(url, {
+                    method: 'POST', // or 'PUT'
+                    body: JSON.stringify(tauler), // data can be `string` or {object}!
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }).then(res => res.json())
+                    .catch(error => console.error('Error:', error))
+                    .then(response => console.log('Success:', response));     
+            }
+
+            static rebreDades() {
+                fetch('http://localhost:8888/dades', {
+                    method: 'GET',
+                    mode: 'no-cors',
+                    cache: 'default',
+                    credentials: 'same-origin',
+                    redirect: 'follow',
+                    referrerPolicy: 'no-referrer'
+                }).then(response => {
+                    return response.json();
+                })
+                    .then(data => {
+                        console.log(data);
                     
-				};
+                    });
+            }
 
-			};
-            xhr.send();
 
-                
-            
-        //     var divc = document.getElementById(div.id-2);
-        //     console.log(divb.id);
-        //    else if(divb.firstChild.id == divb.id+"n"){
-        //        divb.firstChild.src = "fichablanca.png"
-        //    }
-    div.setAttribute("style","position:relative");
-    
-    } })
-    
-    
-}
-        </script>
+            static crearficha() {
+                document.getElementById('taula').addEventListener('click', (ev) => {
+                    if (ev.target.id !== "taula") {
+                        var xhr = new XMLHttpRequest();
+                        var div = document.getElementById(ev.target.id);
+                        if (j) {
+                            if (j == 1) {
+                                if(tauler[ev.target.id-1]==1||tauler[ev.target.id-7]==1||tauler[ev.target.id-9]==1||tauler[parseInt(ev.target.id)+1]==1|| tauler[parseInt(ev.target.id)+8]==1||tauler[parseInt(ev.target.id)+7]==1||tauler[parseInt(ev.target.id)+9]==1||tauler[ev.target.id-8]==1){
+                                xhr.open('GET', 'negra', true);
+                                if (ev.target.id) {
+                                    tauler[ev.target.id] = 1
+                                }
+
+                                document.getElementById('turno').innerHTML = "Tiran blanques";
+                                j=2;
+                                f = 1}else{window.alert("Posició invalida")}
+                            } else if (j == 2) {
+                                if(tauler[ev.target.id-1]==2||tauler[ev.target.id-7]==2||tauler[ev.target.id-9]==2||tauler[parseInt(ev.target.id)+1]==2|| tauler[parseInt(ev.target.id)+8]==2||tauler[parseInt(ev.target.id)+7]==2||tauler[parseInt(ev.target.id)+9]==2||tauler[ev.target.id-8]==2){
+                                var fb = xhr.open('GET', 'blanca', true);
+                                if (ev.target.id) {
+                                    tauler[ev.target.id] = 2
+                                }
+
+                                document.getElementById('turno').innerHTML = "Tiran negres";
+                                j=1;
+                                f = 2;}else{window.alert("Posició invalida")}
+                            }
+                            xhr.responseType = 'blob';
+                            div.setAttribute("id", ev.target.id);
+
+                            xhr.onload = function (e) {
+                                if (this.status == 200) {
+                                    var blob = this.response;
+                                    var ficha = document.createElement('img');
+                                    var URL = window.URL || window.webkitURL;
+                                    if (f == 1) { ficha.setAttribute("id", div.id) }
+                                    if (f == 2) { ficha.setAttribute("id", div.id) }
+                                    ficha.src = URL.createObjectURL(blob);
+
+                                    ficha.setAttribute("style", "position:relative");
+                                    ficha.setAttribute("width", "50");
+                                    ficha.setAttribute("height", "46");
+                                    div.appendChild(ficha);
+                                    var casillasI = div.id - 1;
+                                    var casillasD = parseInt(div.id) + parseInt(1);
+                                    var casillasA = parseInt(div.id) - parseInt(8);
+                                    var casillasB = parseInt(div.id) + parseInt(8);
+                                    var casillasDAD = parseInt(div.id) - parseInt(7);
+                                    var casillasDBI = parseInt(div.id) + parseInt(7);
+                                    var casillasDAI = parseInt(div.id) - parseInt(9);
+                                    var casillasDBD = parseInt(div.id) + parseInt(9);
+                                    console.log("casilla A " + casillasA);
+                                    if (f == 1) {
+                                        
+                                        while (tauler[casillasI] == 2) {
+                                            tauler[casillasI] = 1;
+                                            var divb = document.getElementById(casillasI);
+                                            divb.firstChild.src = ficha.src;
+                                            casillasI = casillasI - 1;
+                                        }
+                                        while (tauler[casillasD] == 2) {
+                                            tauler[casillasD] = 1;
+                                            var divb = document.getElementById(casillasD);
+                                            divb.firstChild.src = ficha.src;
+                                            casillasD = parseInt(casillasD) + 1;
+                                        }
+                                        while (tauler[casillasA] == 2) {
+                                            tauler[casillasA] = 1;
+                                            var divb = document.getElementById(casillasA);
+                                            divb.firstChild.src = ficha.src;
+                                            casillasA = parseInt(casillasA) - 8;
+                                        }
+                                        while (tauler[casillasB] == 2) {
+                                            tauler[casillasB] = 1;
+                                            var divb = document.getElementById(casillasB);
+                                            divb.firstChild.src = ficha.src;
+                                            casillasB = parseInt(casillasB) + 8;
+                                        }
+                                        while (tauler[casillasDAI] == 2) {
+                                            tauler[casillasDAI] = 1;
+                                            var divb = document.getElementById(casillasDAI);
+                                            divb.firstChild.src = ficha.src;
+                                            casillasDAI = parseInt(casillasDAI) - 9;
+                                        }
+                                        while (tauler[casillasDAD] == 2) {
+                                            tauler[casillasDAD] = 1;
+                                            var divb = document.getElementById(casillasDAD);
+                                            divb.firstChild.src = ficha.src;
+                                            casillasDAD = parseInt(casillasDAD) -7;
+                                        }
+                                        while (tauler[casillasDBI] == 2) {
+                                            tauler[casillasDBI] = 1;
+                                            var divb = document.getElementById(casillasDBI);
+                                            divb.firstChild.src = ficha.src;
+                                            casillasDBI = parseInt(casillasDBI) + 7;
+                                        }
+                                        while (tauler[casillasDBD] == 2) {
+                                            tauler[casillasDBD] = 1;
+                                            var divb = document.getElementById(casillasDBD);
+                                            divb.firstChild.src = ficha.src;
+                                            casillasDBD = parseInt(casillasDBD) + 9;
+                                        }
+                                    }
+                                    if (f == 2) {
+                                        while (tauler[casillasI] == 1) {
+                                            tauler[casillasI] = 2;
+                                            var divb = document.getElementById(casillasI);
+                                            divb.firstChild.src = ficha.src;
+                                            casillasI = casillasI - 1
+                                        }
+                                        while (tauler[casillasD] == 1) {
+                                            tauler[casillasD] = 2;
+                                            var divb = document.getElementById(casillasD);
+                                            divb.firstChild.src = ficha.src;
+                                            casillasD = parseInt(casillasD) + 1;
+                                        }
+                                        while (tauler[casillasA] == 1) {
+                                            tauler[casillasA] = 2;
+                                            var divb = document.getElementById(casillasA);
+                                            divb.firstChild.src = ficha.src;
+                                            casillasA = parseInt(casillasA) - 8;
+                                        }
+                                        while (tauler[casillasB] == 1) {
+                                            tauler[casillasB] = 2;
+                                            var divb = document.getElementById(casillasB);
+                                            divb.firstChild.src = ficha.src;
+                                            casillasB = parseInt(casillasB) + 8;
+                                        }
+                                        while (tauler[casillasDAI] == 1) {
+                                            tauler[casillasDAI] = 2;
+                                            var divb = document.getElementById(casillasDAI);
+                                            divb.firstChild.src = ficha.src;
+                                            casillasDAI = parseInt(casillasDAI) - 9;
+                                        }
+                                        while (tauler[casillasDAD] == 1) {
+                                            tauler[casillasDAD] = 2;
+                                            var divb = document.getElementById(casillasDAD);
+                                            divb.firstChild.src = ficha.src;
+                                            casillasDAD = parseInt(casillasDAD) -7;
+                                        }
+                                        while (tauler[casillasDBI] == 1) {
+                                            tauler[casillasDBI] = 2;
+                                            var divb = document.getElementById(casillasDBI);
+                                            divb.firstChild.src = ficha.src;
+                                            casillasDBI = parseInt(casillasDBI) + 7;
+                                        }
+                                        while (tauler[casillasDBD] == 1) {
+                                            tauler[casillasDBD] = 2;
+                                            var divb = document.getElementById(casillasDBD);
+                                            divb.firstChild.src = ficha.src;
+                                            casillasDBD = parseInt(casillasDBD) + 9;
+                                        }
+                                    }
+                                    partida.marcador();
+                                    
+                                };
+
+                            };
+                            xhr.send();
+
+                        } else {
+                            window.alert("Has de crear la partida!");
+                        }
+                        div.setAttribute("style", "position:relative");
+
+                    }
+                })
+            }
+        }
+        partida.inici();
+        partida.crearficha();
+    </script>
 </body>
 
 </html>

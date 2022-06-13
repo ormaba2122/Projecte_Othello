@@ -10,6 +10,10 @@ function iniciar() {
         const reqUrl = new URL(request.url, baseURL);
         console.log("Petició per a  " + reqUrl.pathname + " rebuda.");
         const pathname = reqUrl.pathname;
+        const search_params = reqUrl.searchParams;
+        const nom = search_params.get('nom');
+        const numjugador = search_params.get('numjugador');
+        
 
         if (pathname == '/inici') {
             fs.readFile('./partida.html', function(err, sortida) {
@@ -18,9 +22,26 @@ function iniciar() {
                 });
                 response.write(sortida);
                 response.end();
+                
             });
 
-        } else if (pathname == '/negra') {
+        }else if (pathname == '/login') {
+            fs.readFile('./login.html', function(err, sortida) {
+                response.writeHead(200, {
+                "Content-Type": "text/html; charset=utf-8"
+                });
+                response.write(sortida);
+                response.end();
+            });
+		}
+        else if (pathname == '/dades') {
+            function dades(dataPost, res) {
+                const data = JSON.parse(dataPost);
+                console.log("--------------------------------",data);
+                res.end();
+            }
+		}
+        else if (pathname == '/negra') {
             fs.readFile('./fichanegre.png', function(err, sortida) {
                 response.writeHead(200, {
                     'Content-Type': 'image/png'
